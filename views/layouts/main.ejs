@@ -11,26 +11,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+  
+  <style>
+    /* Change text color to light pastel pink */
+    
+    .nav-link {
+      color: rgb(247, 152, 167) !important; /* Light pastel pink for navigation links */
+      font-size: large;
+    }
+  </style>
 </head>
 <body>
   
   <div class="container-xxl px-md-5 bg-white shadow-lg">
 
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <img src="/img/logo.svg" width="229" height="68" alt="Cooking Blog - Made with Node.js">
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="/img/logo.jpg" width="160" height="90" alt="Cooking Blog - Made with Node.js">
       </a>
-
+    
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="/about" class="nav-link px-2 link-secondary">About</a></li>
         <li><a href="/submit-recipe" class="nav-link px-2 link-secondary">Submit</a></li>
         <li><a href="/contact" class="nav-link px-2 link-secondary">Contact</a></li>
       </ul>
-
       <div class="col-md-3 text-end">
         <form method="POST" action="/search">
-          <input type="search" name="searchTerm" class="form-control" placeholder="Search..." aria-label="Search">
+          <div class="col-md-3 text-end">
+            <form method="POST" action="/search">
+              <input type="search" name="searchTerm" class="form-control" placeholder="Search the recipe here" aria-label="Search" 
+                     style="border: 2px solid #ff99aa; color: #ff99aa; width:auto;" 
+                     onfocus="this.style.borderColor='#ff7a8c';" 
+                     onblur="this.style.borderColor='#ff99aa';">
+            </form>
+          </div>          
         </form>
       </div>
     </header>
@@ -38,10 +53,6 @@
     <main>
       <%- body -%>
     </main>
-
-    <footer class="py-5">
-      <p>Build by Raddy</p>
-    </footer>
 
   </div>
 
